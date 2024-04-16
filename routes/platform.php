@@ -31,6 +31,12 @@ use Tabuna\Breadcrumbs\Trail;
 |
 */
 
+Route::screen('/', PlatformScreen::class)
+    ->name('platform.index')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail->push(__('Home'), route('platform.index'));
+    });
+
 // Main
 Route::screen('/main', PlatformScreen::class)
     ->name('platform.main');

@@ -16,6 +16,10 @@
         <include>
             <directory>app</directory>
         </include>
+        <exclude>
+            <directory>app/Orchid/Screens/Examples</directory>
+            <directory>app/Orchid/Layouts/Examples</directory>
+        </exclude>
     </source>
     <php>
         <env name="APP_ENV" value="testing"/>

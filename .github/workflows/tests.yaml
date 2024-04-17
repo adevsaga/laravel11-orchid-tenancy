@@ -7,7 +7,7 @@ on:
     branches:
     - main
 jobs:
-  dusk-php:
+  general-tests:
     runs-on: ubuntu-latest
 
     # Service containers to run with `runner-job`
@@ -55,6 +55,9 @@ jobs:
 
       - name: Generate Application Key
         run: php artisan key:generate
+
+      - name: Run migrations
+        run: php artisan migrate
 
       - name: Run PHPUnit tests
         run: php artisan test

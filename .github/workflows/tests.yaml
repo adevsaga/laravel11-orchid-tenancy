@@ -7,7 +7,7 @@ on:
     branches:
     - main
 jobs:
-  general-tests:
+  tests:
     runs-on: ubuntu-latest
 
     # Service containers to run with `runner-job`
@@ -46,7 +46,7 @@ jobs:
       - name: Setup PHP with PECL extension
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.2"
+          php-version: "8.3"
 
       - name: Prepare The Environment
         run: cp .env.example .env
@@ -84,7 +84,7 @@ jobs:
 
       - name: Upload Console Logs
         if: failure()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: console
           path: tests/Browser/console
